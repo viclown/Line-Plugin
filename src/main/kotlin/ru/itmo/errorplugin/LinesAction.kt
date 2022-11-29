@@ -19,22 +19,20 @@ class LinesAction: AnAction() {
 
         val label = JLabel("$lines lines")
         label.font = Font("Arial", Font.BOLD, 18)
-        val icon1 = ImageIcon("C:\\Users\\Виктория\\Desktop\\github\\viclown\\errorplugin\\src\\main\\images\\1.png")
-        val icon2 = ImageIcon("C:\\Users\\Виктория\\Desktop\\github\\viclown\\errorplugin\\src\\main\\images\\2.png")
-        val icon3 = ImageIcon("C:\\Users\\Виктория\\Desktop\\github\\viclown\\errorplugin\\src\\main\\images\\3.png")
-        val icon4 = ImageIcon("C:\\Users\\Виктория\\Desktop\\github\\viclown\\errorplugin\\src\\main\\images\\4.png")
-        val icon5 = ImageIcon("C:\\Users\\Виктория\\Desktop\\github\\viclown\\errorplugin\\src\\main\\images\\5.png")
-        val icon6 = ImageIcon("C:\\Users\\Виктория\\Desktop\\github\\viclown\\errorplugin\\src\\main\\images\\6.png")
-
 
         when (lines) {
-            in 1..10 -> JOptionPane.showMessageDialog(null, label, "$lines lines", JOptionPane.INFORMATION_MESSAGE, icon1)
-            in 11..50 -> JOptionPane.showMessageDialog(null, label, "$lines lines", JOptionPane.INFORMATION_MESSAGE, icon2)
-            in 51..100 -> JOptionPane.showMessageDialog(null, label, "$lines lines", JOptionPane.INFORMATION_MESSAGE, icon3)
-            in 101..500 -> JOptionPane.showMessageDialog(null, label, "$lines lines", JOptionPane.INFORMATION_MESSAGE, icon4)
-            in 501..1000 -> JOptionPane.showMessageDialog(null, label, "$lines lines", JOptionPane.INFORMATION_MESSAGE, icon5)
-            else -> JOptionPane.showMessageDialog(null, label, "$lines lines", JOptionPane.INFORMATION_MESSAGE, icon6)
+            in 1..10 -> showPanel(label, lines, 1)
+            in 11..50 -> showPanel(label, lines, 2)
+            in 51..100 -> showPanel(label, lines, 3)
+            in 101..500 -> showPanel(label, lines, 4)
+            in 501..1000 -> showPanel(label, lines, 5)
+            else -> showPanel(label, lines, 6)
         }
+    }
+
+    private fun showPanel(label: JLabel, lines: Int, icon_num: Int) {
+        val icon = ImageIcon("C:\\Users\\Виктория\\Desktop\\github\\viclown\\errorplugin\\src\\main\\images\\$icon_num.png")
+        JOptionPane.showMessageDialog(null, label, "$lines lines", JOptionPane.INFORMATION_MESSAGE, icon)
     }
 }
 
