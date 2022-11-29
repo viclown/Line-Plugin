@@ -16,9 +16,11 @@
     </extensions>
 
     <actions>
-        <group id="LinesPlugin.LinesAction" text="LinesPlugin" description="about my plugin">
+
+        <action id="ru.itmo.errorplugin.LinesAction" class="ru.itmo.errorplugin.LinesAction" text="Lines-Plugin"
+                description="Show meme depending on number of lines">
             <add-to-group group-id="MainMenu" anchor="last"/>
-            <action class="ru.itmo.errorplugin.LinesAction" id="LinesPlugin.Actions.LinesAction" text="Count Lines"/>
-        </group>
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl BACK_SLASH" second-keystroke="ctrl T"/>
+        </action>
     </actions>
 </idea-plugin>
