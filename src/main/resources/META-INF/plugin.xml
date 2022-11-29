@@ -1,0 +1,24 @@
+<idea-plugin>
+    <id>ru.itmo.errorplugin</id>
+    <name>LinesPlugin</name>
+
+    <description><![CDATA[
+    Plugin that show different memes depending on number of lines
+    ]]></description>
+    <vendor></vendor>
+
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <group id="LinesPlugin.LinesAction" text="LinesPlugin" description="about my plugin">
+            <add-to-group group-id="MainMenu" anchor="last"/>
+            <action class="ru.itmo.errorplugin.LinesAction" id="LinesPlugin.Actions.LinesAction" text="Count Lines"/>
+        </group>
+    </actions>
+</idea-plugin>
